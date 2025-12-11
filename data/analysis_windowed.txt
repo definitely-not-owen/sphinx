@@ -1,0 +1,253 @@
+============================================================
+BENCHMARK ANALYSIS
+============================================================
+Timestamp: 2025-11-15T19:27:10.783964
+Strategies tested: Dynamic Adaptive Strategy, Performance-Based Strategy, Windowed Performance Strategy
+
+============================================================
+STRATEGY: Dynamic Adaptive Strategy
+============================================================
+
+Performance Statistics:
+  Number of runs: 3
+  Average survival rate: 43.13%
+  Median survival rate: 42.60%
+  Standard deviation: 3.83%
+  Range: 39.60% - 47.20%
+  95% Confidence Interval: [38.80%, 47.47%]
+  Variance: 14.65
+
+Planet Usage Patterns:
+  Total trips analyzed: 1002
+  Number of planet transitions: 59
+
+  Survival rates by planet:
+    Planet 1: 48.08% (375/780 trips)
+    Planet 2: 25.68% (57/222 trips)
+
+  Temporal Performance (Early/Mid/Late Game):
+    Segment 1 (Trips 1-334):
+      Planet 1: 47.31% (123/260 trips)
+      Planet 2: 47.30% (35/74 trips)
+    Segment 2 (Trips 335-668):
+      Planet 1: 49.23% (128/260 trips)
+      Planet 2: 18.92% (14/74 trips)
+    Segment 3 (Trips 669-1002):
+      Planet 1: 47.69% (124/260 trips)
+      Planet 2: 10.81% (8/74 trips)
+
+  Transition Effectiveness:
+    Total transitions: 59
+    Average improvement per transition: 17.12%
+    Positive transitions: 35/59 (59.3%)
+
+  Planet Performance Decay:
+    Planet 1:
+      Average decay: 4.44%
+      Sequences analyzed: 18
+      Average sequence length: 40.0 trips
+    Planet 2:
+      Average decay: 21.67%
+      Sequences analyzed: 3
+      Average sequence length: 47.0 trips
+
+  Streak Patterns:
+    Planet streaks:
+      Average length: 16.7 trips
+      Maximum length: 47 trips
+      Total streaks: 60
+    Success streaks:
+      Average success streak: 3.2 trips
+      Average failure streak: 4.2 trips
+      Max success streak: 12 trips
+      Max failure streak: 33 trips
+
+  Planet usage ranges:
+    Trips 1-47: Planet 2 (47 trips)
+    Trips 48-50: Planet 1 (3 trips)
+    Trips 51-57: Planet 2 (7 trips)
+    Trips 58-60: Planet 1 (3 trips)
+    Trips 61-67: Planet 2 (7 trips)
+    Trips 68-70: Planet 1 (3 trips)
+    Trips 71-77: Planet 2 (7 trips)
+    Trips 78-117: Planet 1 (40 trips)
+    Trips 118-118: Planet 2 (1 trips)
+    Trips 119-158: Planet 1 (40 trips)
+    ... and 10 more ranges
+
+  Individual run details:
+    Run 1: 47.20% survival, 19 transitions, 20 planet ranges
+    Run 2: 42.60% survival, 19 transitions, 20 planet ranges
+    Run 3: 39.60% survival, 19 transitions, 20 planet ranges
+
+============================================================
+STRATEGY: Performance-Based Strategy
+============================================================
+
+Performance Statistics:
+  Number of runs: 3
+  Average survival rate: 52.97%
+  Median survival rate: 54.40%
+  Standard deviation: 5.78%
+  Range: 46.60% - 57.90%
+  95% Confidence Interval: [46.42%, 59.51%]
+  Variance: 33.46
+
+Planet Usage Patterns:
+  Total trips analyzed: 1002
+  Number of planet transitions: 76
+
+  Survival rates by planet:
+    Planet 1: 50.27% (372/740 trips)
+    Planet 2: 60.69% (159/262 trips)
+
+  Temporal Performance (Early/Mid/Late Game):
+    Segment 1 (Trips 1-334):
+      Planet 1: 48.45% (94/194 trips)
+      Planet 2: 70.71% (99/140 trips)
+    Segment 2 (Trips 335-668):
+      Planet 1: 51.64% (126/244 trips)
+      Planet 2: 62.22% (56/90 trips)
+    Segment 3 (Trips 669-1002):
+      Planet 1: 50.33% (152/302 trips)
+      Planet 2: 12.50% (4/32 trips)
+
+  Transition Effectiveness:
+    Total transitions: 76
+    Average improvement per transition: 15.16%
+    Positive transitions: 43/76 (56.6%)
+
+  Planet Performance Decay:
+    Planet 1:
+      Average decay: -1.56%
+      Sequences analyzed: 16
+      Average sequence length: 40.0 trips
+    Planet 2:
+      Average decay: 13.33%
+      Sequences analyzed: 3
+      Average sequence length: 40.0 trips
+
+  Streak Patterns:
+    Planet streaks:
+      Average length: 13.0 trips
+      Maximum length: 40 trips
+      Total streaks: 77
+    Success streaks:
+      Average success streak: 3.5 trips
+      Average failure streak: 3.1 trips
+      Max success streak: 34 trips
+      Max failure streak: 12 trips
+
+  Planet usage ranges:
+    Trips 1-1: Planet 1 (1 trips)
+    Trips 2-6: Planet 2 (5 trips)
+    Trips 7-7: Planet 1 (1 trips)
+    Trips 8-12: Planet 2 (5 trips)
+    Trips 13-13: Planet 1 (1 trips)
+    Trips 14-18: Planet 2 (5 trips)
+    Trips 19-19: Planet 1 (1 trips)
+    Trips 20-24: Planet 2 (5 trips)
+    Trips 25-25: Planet 1 (1 trips)
+    Trips 26-30: Planet 2 (5 trips)
+    ... and 15 more ranges
+
+  Individual run details:
+    Run 1: 57.90% survival, 30 transitions, 31 planet ranges
+    Run 2: 54.40% survival, 22 transitions, 23 planet ranges
+    Run 3: 46.60% survival, 24 transitions, 25 planet ranges
+
+============================================================
+STRATEGY: Windowed Performance Strategy
+============================================================
+
+Performance Statistics:
+  Number of runs: 3
+  Average survival rate: 52.00%
+  Median survival rate: 50.40%
+  Standard deviation: 3.58%
+  Range: 49.50% - 56.10%
+  95% Confidence Interval: [47.95%, 56.05%]
+  Variance: 12.81
+
+Planet Usage Patterns:
+  Total trips analyzed: 1002
+  Number of planet transitions: 57
+
+  Survival rates by planet:
+    Planet 0: 49.78% (225/452 trips)
+    Planet 1: 49.35% (76/154 trips)
+    Planet 2: 55.30% (219/396 trips)
+
+  Temporal Performance (Early/Mid/Late Game):
+    Segment 1 (Trips 1-334):
+      Planet 0: 51.14% (90/176 trips)
+      Planet 2: 61.39% (97/158 trips)
+    Segment 2 (Trips 335-668):
+      Planet 0: 0.00% (0/1 trips)
+      Planet 1: 49.35% (76/154 trips)
+      Planet 2: 51.40% (92/179 trips)
+    Segment 3 (Trips 669-1002):
+      Planet 0: 49.09% (135/275 trips)
+      Planet 2: 50.85% (30/59 trips)
+
+  Transition Effectiveness:
+    Total transitions: 57
+    Average improvement per transition: 10.70%
+    Positive transitions: 27/57 (47.4%)
+
+  Planet Performance Decay:
+    Planet 0:
+      Average decay: -1.50%
+      Sequences analyzed: 10
+      Average sequence length: 40.0 trips
+    Planet 1:
+      Average decay: 0.00%
+      Sequences analyzed: 3
+      Average sequence length: 40.0 trips
+    Planet 2:
+      Average decay: -1.25%
+      Sequences analyzed: 8
+      Average sequence length: 40.0 trips
+
+  Streak Patterns:
+    Planet streaks:
+      Average length: 17.3 trips
+      Maximum length: 40 trips
+      Total streaks: 58
+    Success streaks:
+      Average success streak: 3.6 trips
+      Average failure streak: 3.3 trips
+      Max success streak: 35 trips
+      Max failure streak: 31 trips
+
+  Planet usage ranges:
+    Trips 1-40: Planet 2 (40 trips)
+    Trips 41-42: Planet 0 (2 trips)
+    Trips 43-45: Planet 2 (3 trips)
+    Trips 46-46: Planet 0 (1 trips)
+    Trips 47-51: Planet 2 (5 trips)
+    Trips 52-52: Planet 0 (1 trips)
+    Trips 53-57: Planet 2 (5 trips)
+    Trips 58-97: Planet 0 (40 trips)
+    Trips 98-98: Planet 2 (1 trips)
+    Trips 99-138: Planet 0 (40 trips)
+    ... and 10 more ranges
+
+  Individual run details:
+    Run 1: 56.10% survival, 15 transitions, 16 planet ranges
+    Run 2: 50.40% survival, 21 transitions, 22 planet ranges
+    Run 3: 49.50% survival, 19 transitions, 20 planet ranges
+
+
+============================================================
+SUGGESTIONS FOR IMPROVEMENT
+============================================================
+
+Dynamic Adaptive Strategy:
+  - Planet 2 shows significant decay (21.67%) over long sequences. Consider switching more frequently when using this planet.
+  - Significant difference in planet performance: Planet 1 (48.08%) vs Planet 2 (25.68%). Consider using Planet 1 more often.
+
+Performance-Based Strategy:
+  - Planet 2 shows significant decay (13.33%) over long sequences. Consider switching more frequently when using this planet.
+
+Windowed Performance Strategy: No specific suggestions (strategy looks good)

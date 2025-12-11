@@ -1,0 +1,5666 @@
+
+
+
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- =============================================== -->
+    <!-- Document Title -->
+    <!-- =============================================== -->
+    <title>
+      
+  Morty Express
+
+    </title>
+    <!-- =============================================== -->
+    <!-- Favicons -->
+    <!-- =============================================== -->
+    <link rel="shortcut icon"
+          type="image/x-icon"
+          href="/static/images/favicons/favicon.349440df6dcf.ico" />
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="/static/images/favicons/apple-touch-icon.c72922f4c3cd.png" />
+    <link rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/static/images/favicons/favicon-96x96.87dea061879e.png" />
+    <link rel="manifest" href="/static/images/favicons/manifest.b36a19e9073e.json" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- =============================================== -->
+    <!-- Stylesheets -->
+    <!-- =============================================== -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+          rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+          rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css"
+          rel="stylesheet" />
+    
+  
+      <link href="/static/webpack_bundles/css/project.8c5b220bf6f482881a90.css" rel="stylesheet" />
+    
+  <style>
+    body {
+      background: #0d1117;
+      color: #b4bcc8;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+    }
+
+    .hero {
+      color: #8a9db5;
+      padding: 20px 0;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #30363d;
+    }
+
+    .hero h1 {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-weight: 700;
+      color: #8a9db5;
+      text-shadow: 0 0 20px rgba(138, 157, 181, 0.15);
+      font-size: 2.5rem;
+    }
+
+    .hero .lead {
+      font-family: 'JetBrains Mono', monospace;
+      color: #7a8896;
+      font-size: 1rem;
+    }
+
+    .ascii-art {
+      font-size: 0.28rem;
+      line-height: 0.34rem;
+      color: #4a5561;
+      margin: 0 0 15px 0;
+      overflow: hidden;
+      text-align: left;
+      width: 120%;
+      transform: translateX(-10%);
+    }
+
+    .container {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .left-column {
+      background: #161b22;
+      border-right: 2px solid #30363d;
+      padding-right: 30px;
+      padding-left: 15px;
+      min-height: 100vh;
+    }
+
+    .right-column {
+      padding-left: 30px;
+      padding-right: 15px;
+      min-height: 100vh;
+    }
+
+    .section-divider {
+      border: 0;
+      border-top: 2px solid #30363d;
+      margin: 40px 0;
+    }
+
+    .challenge-content {
+      padding: 0 0 30px 0;
+      margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      border-bottom: 2px solid #30363d;
+      max-width: 940px;
+    }
+
+    .challenge-content p {
+      padding-left: 12px;
+    }
+
+    .challenge-content h2 {
+      color: #8a9db5;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 10px;
+    }
+
+    .challenge-content h3 {
+      color: #96a8ba;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+    }
+
+    .challenge-content h4 {
+      color: #96a8ba;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .challenge-content p,
+    .challenge-content li {
+      color: #9ca3af;
+      line-height: 1.8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+    }
+
+    .challenge-content pre {
+      background: #0d1117;
+      color: #96a8ba;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      border: 1px solid #30363d;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .challenge-content code {
+      background: #0d1117;
+      color: #96a8ba;
+      padding: 3px 8px;
+      border-radius: 3px;
+      border: 1px solid #30363d;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .challenge-content pre code {
+      border: none;
+      padding: 0;
+    }
+
+    .challenge-content strong {
+      color: #8a9db5;
+      font-weight: 600;
+    }
+
+    .challenge-content em {
+      color: #b89b87;
+    }
+
+    .challenge-content ol,
+    .challenge-content ul {
+      margin-left: 20px;
+    }
+
+    .token-section {
+      padding: 20px 0 30px 0;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #30363d;
+    }
+
+    .token-section h3 {
+      color: #8a9db5;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .token-section p {
+      color: #7a8896;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .form-control {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      color: #b4bcc8;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .form-control:focus {
+      background: #0d1117;
+      border-color: #6b8a7a;
+      color: #b4bcc8;
+      box-shadow: 0 0 0 0.2rem rgba(107, 138, 122, 0.25);
+    }
+
+    .form-control::placeholder {
+      color: #6e7681;
+    }
+
+    .btn-primary {
+      background: #5f7a6e;
+      border-color: #5f7a6e;
+      color: #d1d5da;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #6b8a7a;
+      border-color: #6b8a7a;
+      box-shadow: 0 0 10px rgba(107, 138, 122, 0.3);
+    }
+
+    .btn-primary:focus {
+      box-shadow: 0 0 0 0.2rem rgba(107, 138, 122, 0.3);
+    }
+
+    .leaderboard {
+      padding: 20px 0 30px 0;
+      margin-bottom: 30px;
+    }
+
+    .leaderboard h3 {
+      color: #8a9db5;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .leaderboard p {
+      color: #7a8896;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .leaderboard table {
+      margin-top: 20px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .table {
+      width: 100%;
+      border-color: #30363d;
+    }
+
+    .table thead th {
+      background: #0d1117 !important;
+      color: #8a9db5 !important;
+      border-color: #30363d !important;
+      padding: 12px;
+    }
+
+    .table tbody tr {
+      background: #161b22 !important;
+    }
+
+    .table tbody td {
+      background: #161b22 !important;
+      color: #d1d5da !important;
+      border-color: #30363d !important;
+      padding: 12px;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background: #1c2128 !important;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) td {
+      background: #1c2128 !important;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+      background: #161b22 !important;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) td {
+      background: #161b22 !important;
+    }
+
+    .table-dark {
+      background: #0d1117;
+      color: #8a9db5;
+      border-color: #30363d;
+    }
+
+    .badge-rank {
+      font-size: 0.85em;
+      padding: 4px 8px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .bg-warning {
+      background-color: #9a8b5a !important;
+    }
+
+    .bg-success {
+      background-color: #6b8a7a !important;
+    }
+
+    .bg-danger {
+      background-color: #a07575 !important;
+    }
+
+    .bg-info {
+      background-color: #7a8a9a !important;
+    }
+
+    .my-games-section {
+      padding: 20px 0 30px 0;
+      margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      border-bottom: 2px solid #30363d;
+      max-width: 940px;
+    }
+
+    .my-games-section h3 {
+      color: #8a9db5;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    #tokenResult {
+      margin-top: 15px;
+    }
+
+    .alert {
+      font-family: 'JetBrains Mono', monospace;
+      border: 1px solid #30363d;
+    }
+
+    .alert-success {
+      background: #0d1117;
+      color: #7a9a87;
+      border-color: #6b8a7a;
+    }
+
+    .alert-danger {
+      background: #0d1117;
+      color: #b88a8a;
+      border-color: #a07575;
+    }
+
+    .alert-info {
+      background: #0d1117;
+      color: #8a9db5;
+      border-color: #7a8a9a;
+    }
+
+    .alert code {
+      background: #161b22;
+      color: #96a8ba;
+      padding: 3px 8px;
+      border: 1px solid #30363d;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .diagram-img {
+      width: 100%;
+      max-width: 940px;
+    }
+  </style>
+
+    <!-- =============================================== -->
+    <!-- JavaScripts -->
+    <!-- =============================================== -->
+    
+      <script src="/static/webpack_bundles/js/vendors-c767701c21f19bdd69f6.js" defer></script>
+      <script src="/static/webpack_bundles/js/project-c767701c21f19bdd69f6.js" defer></script>
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+      
+      
+    
+  </head>
+  <body>
+    
+      <main class="main" id="top">
+        
+  <div class="container">
+    <div class="row">
+      <!-- LEFT COLUMN -->
+      <div class="col-lg-4 left-column">
+        <!-- Hero Section -->
+        <div class="hero">
+          <!--pre class="ascii-art" id="asciiArt">
+@@@@@@@@@@@@@@@@@@@@@@**************#****************************+--=+****@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@***************#*****************************=--+*****@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@+************---*****************************#--=+*****%@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@*******#+------=*****************************=--*******@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@%+=----=+=-----+*****************************--*******#@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@*+=-------------+***************************#--********@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@-::::==------------=**************************#--+*******@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@=::::::-+-------------+*************************-=+******+%@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@=:::::::-+--------------+**********************=-+********@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@++:::::#%%------------===-=*******************#-=+********@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@--=+-:::-=--=-----=+-::::::*=+#***************=-=*********@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@*-----=++=--+-----+::::::::::-+--=++**********+-=*********%@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@+----------+=----=::::::::::=%*===----=*******==**********@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@+--------=+------+-:::::::::::%*+*=----*****#-+**********%@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@*-------+----------=*=---::--+*--------****%=+***********@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@%------==----------------==------------++---=+**********%@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@**%@@@@---------=+-----------------------------+==+-+*********@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@******+---------------------------------------=---=*********%@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@%******---=++---------------------------*--=++----**********@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@******--+===++------------------------=--=---=+***********@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@#***=--#*+====+**+-----------------*%----+*************#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@#---++==+****=---------------=****+****************#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@******+-----=++=----------------=***********************#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@%******----------------------***************************@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@*******----------------=#*****************************@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@#*******===-==-==++=++*******************************@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@%*******---------**********************************@@@@@@@@@@@@@@@@
+</pre -->
+          <h1 class="fw-bold">Morty Express</h1>
+          <p class="lead">Can you beat Claude Code?</p>
+        </div>
+        <!-- Forms Section -->
+        <div class="token-section">
+          
+            <h3>Get Started</h3>
+            <p class="mb-3 small">Receive an API token and start the challenge.</p>
+            <form id="tokenForm">
+              <input type="hidden" name="csrfmiddlewaretoken" value="vriw48kJKF7GNJXCJHv3Dg8JLiDoYNWtb0aF3YIkHXbtQ6jRreCS3RJeqE4Ej7dg">
+              <div class="mb-2">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       id="name"
+                       name="name"
+                       placeholder="Display Name"
+                       required />
+              </div>
+              <div class="d-flex gap-2">
+                <input type="email"
+                       class="form-control form-control-sm flex-grow-1"
+                       id="email"
+                       name="email"
+                       placeholder="your.email@example.com"
+                       required />
+                <button type="submit" class="btn btn-primary btn-sm flex-shrink-0">Request Token</button>
+              </div>
+            </form>
+            <div id="tokenResult"></div>
+            <div class="mt-4">
+              <p class="mb-2 small">
+                <strong>Already have a token?</strong>
+              </p>
+              <form method="post" action="/">
+                <input type="hidden" name="csrfmiddlewaretoken" value="vriw48kJKF7GNJXCJHv3Dg8JLiDoYNWtb0aF3YIkHXbtQ6jRreCS3RJeqE4Ej7dg">
+                <div class="d-flex gap-2">
+                  <input type="text"
+                         class="form-control form-control-sm flex-grow-1"
+                         name="token"
+                         placeholder="Enter your API token to show your games"
+                         required />
+                  <button type="submit" class="btn btn-primary btn-sm flex-shrink-0">Login</button>
+                </div>
+              </form>
+              
+            </div>
+          
+        </div>
+        <!-- Leaderboard -->
+        <div class="leaderboard">
+          <h3>
+            <i class="bi bi-trophy-fill text-warning"></i> Leaderboard
+          </h3>
+          <p>Who rescued the most Morties:</p>
+          
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-sm">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Rate</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-warning badge-rank">🥇</span>
+                        
+                      </td>
+                      <td>
+                        <strong>crab nebula</strong>
+                      </td>
+                      <td>93.7%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-secondary badge-rank">🥈</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Antoine</strong>
+                      </td>
+                      <td>93.3%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-danger badge-rank">🥉</span>
+                        
+                      </td>
+                      <td>
+                        <strong>2D Segment Tree</strong>
+                      </td>
+                      <td>93.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">4</span>
+                        
+                      </td>
+                      <td>
+                        <strong>JasonMendoza2008</strong>
+                      </td>
+                      <td>93.2%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">5</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Rphy</strong>
+                      </td>
+                      <td>93.0%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">6</span>
+                        
+                      </td>
+                      <td>
+                        <strong>[̲̅$̲̅(̲̅1̲̅ο.ο̲̅οο̲̅)̲̅$̲̅]</strong>
+                      </td>
+                      <td>92.8%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">7</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Inspector</strong>
+                      </td>
+                      <td>92.7%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">8</span>
+                        
+                      </td>
+                      <td>
+                        <strong>n</strong>
+                      </td>
+                      <td>92.6%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">9</span>
+                        
+                      </td>
+                      <td>
+                        <strong>SarlCagan</strong>
+                      </td>
+                      <td>92.6%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">10</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Alyx</strong>
+                      </td>
+                      <td>92.5%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">11</span>
+                        
+                      </td>
+                      <td>
+                        <strong>RB</strong>
+                      </td>
+                      <td>92.4%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">12</span>
+                        
+                      </td>
+                      <td>
+                        <strong>adandi</strong>
+                      </td>
+                      <td>92.3%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">13</span>
+                        
+                      </td>
+                      <td>
+                        <strong>A bot has no name</strong>
+                      </td>
+                      <td>92.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">14</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Worldsbegin</strong>
+                      </td>
+                      <td>92.0%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">15</span>
+                        
+                      </td>
+                      <td>
+                        <strong>YiyiTarictaric</strong>
+                      </td>
+                      <td>90.8%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">16</span>
+                        
+                      </td>
+                      <td>
+                        <strong>bill</strong>
+                      </td>
+                      <td>90.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">17</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pnlmakerb</strong>
+                      </td>
+                      <td>90.6%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">18</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jabey Babey Taboada</strong>
+                      </td>
+                      <td>90.1%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">19</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Neyl ESSAKALLI</strong>
+                      </td>
+                      <td>90.1%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">20</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Dingus</strong>
+                      </td>
+                      <td>89.7%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">21</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Milz</strong>
+                      </td>
+                      <td>89.7%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">22</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jakash</strong>
+                      </td>
+                      <td>89.6%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">23</span>
+                        
+                      </td>
+                      <td>
+                        <strong>bigantoine</strong>
+                      </td>
+                      <td>89.6%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">24</span>
+                        
+                      </td>
+                      <td>
+                        <strong>; UPDATE leaderboard SET rank=1 WHERE name=&#x27;me&#x27;;--</strong>
+                      </td>
+                      <td>89.5%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">25</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ke</strong>
+                      </td>
+                      <td>89.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">26</span>
+                        
+                      </td>
+                      <td>
+                        <strong>anton</strong>
+                      </td>
+                      <td>89.0%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">27</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Mehdi Bennani Smires</strong>
+                      </td>
+                      <td>88.9%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">28</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Xx Sasuke2008 xX</strong>
+                      </td>
+                      <td>88.0%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">29</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Steven James</strong>
+                      </td>
+                      <td>87.7%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">30</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Fixaco</strong>
+                      </td>
+                      <td>87.6%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">31</span>
+                        
+                      </td>
+                      <td>
+                        <strong>RBRBRBRB</strong>
+                      </td>
+                      <td>87.3%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">32</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Veldmuis</strong>
+                      </td>
+                      <td>87.3%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">33</span>
+                        
+                      </td>
+                      <td>
+                        <strong>NameUrPrice</strong>
+                      </td>
+                      <td>87.2%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">34</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Alyx 22</strong>
+                      </td>
+                      <td>86.6%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">35</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Elghali Benjelloun</strong>
+                      </td>
+                      <td>86.3%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">36</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kameron</strong>
+                      </td>
+                      <td>86.2%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">37</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jabey Babey Taboada 2</strong>
+                      </td>
+                      <td>86.2%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">38</span>
+                        
+                      </td>
+                      <td>
+                        <strong>cesorito</strong>
+                      </td>
+                      <td>85.7%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">39</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jody Powlette</strong>
+                      </td>
+                      <td>85.7%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">40</span>
+                        
+                      </td>
+                      <td>
+                        <strong>bobthebuilder</strong>
+                      </td>
+                      <td>85.3%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">41</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jacques</strong>
+                      </td>
+                      <td>84.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">42</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ynot</strong>
+                      </td>
+                      <td>84.2%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">43</span>
+                        
+                      </td>
+                      <td>
+                        <strong>PnLMaker</strong>
+                      </td>
+                      <td>83.8%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">44</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Levann</strong>
+                      </td>
+                      <td>83.4%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">45</span>
+                        
+                      </td>
+                      <td>
+                        <strong>adam</strong>
+                      </td>
+                      <td>82.6%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">46</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Louis Lhotte</strong>
+                      </td>
+                      <td>82.5%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">47</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Fouad</strong>
+                      </td>
+                      <td>82.4%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">48</span>
+                        
+                      </td>
+                      <td>
+                        <strong>mar1shell</strong>
+                      </td>
+                      <td>82.4%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">49</span>
+                        
+                      </td>
+                      <td>
+                        <strong>rabraghib</strong>
+                      </td>
+                      <td>81.4%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">50</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kersey</strong>
+                      </td>
+                      <td>81.3%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">51</span>
+                        
+                      </td>
+                      <td>
+                        <strong>AngryLemon</strong>
+                      </td>
+                      <td>80.9%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">52</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Synthwave</strong>
+                      </td>
+                      <td>80.7%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">53</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ElPredatorz</strong>
+                      </td>
+                      <td>80.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">54</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Daniel</strong>
+                      </td>
+                      <td>80.1%</td>
+                      <td>Oct 29</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">55</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs7</strong>
+                      </td>
+                      <td>80.0%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">56</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Juan Manuel</strong>
+                      </td>
+                      <td>79.6%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">57</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs1</strong>
+                      </td>
+                      <td>79.5%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">58</span>
+                        
+                      </td>
+                      <td>
+                        <strong>MathieuF</strong>
+                      </td>
+                      <td>79.0%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">59</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs3</strong>
+                      </td>
+                      <td>79.0%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">60</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs4</strong>
+                      </td>
+                      <td>78.9%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">61</span>
+                        
+                      </td>
+                      <td>
+                        <strong>LordFireHawk</strong>
+                      </td>
+                      <td>78.9%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">62</span>
+                        
+                      </td>
+                      <td>
+                        <strong>tom</strong>
+                      </td>
+                      <td>78.8%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">63</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Sergio Peterson</strong>
+                      </td>
+                      <td>78.7%</td>
+                      <td>Oct 28</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">64</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Blu3town</strong>
+                      </td>
+                      <td>78.4%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">65</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs</strong>
+                      </td>
+                      <td>78.2%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">66</span>
+                        
+                      </td>
+                      <td>
+                        <strong>TheSlender</strong>
+                      </td>
+                      <td>77.9%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">67</span>
+                        
+                      </td>
+                      <td>
+                        <strong>yow</strong>
+                      </td>
+                      <td>77.6%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">68</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Soufiane AIT LHADJ</strong>
+                      </td>
+                      <td>77.6%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">69</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs8</strong>
+                      </td>
+                      <td>77.3%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">70</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jeffrey</strong>
+                      </td>
+                      <td>77.2%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">71</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Squidpunch</strong>
+                      </td>
+                      <td>77.1%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">72</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Christiaan</strong>
+                      </td>
+                      <td>76.9%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">73</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Saransh Surana</strong>
+                      </td>
+                      <td>76.9%</td>
+                      <td>Oct 26</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">74</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Oblivion </strong>
+                      </td>
+                      <td>76.8%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">75</span>
+                        
+                      </td>
+                      <td>
+                        <strong>biancap</strong>
+                      </td>
+                      <td>76.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">76</span>
+                        
+                      </td>
+                      <td>
+                        <strong>hia</strong>
+                      </td>
+                      <td>76.6%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">77</span>
+                        
+                      </td>
+                      <td>
+                        <strong>matteo</strong>
+                      </td>
+                      <td>76.5%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">78</span>
+                        
+                      </td>
+                      <td>
+                        <strong>MindF*ck</strong>
+                      </td>
+                      <td>76.5%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">79</span>
+                        
+                      </td>
+                      <td>
+                        <strong>cayenne</strong>
+                      </td>
+                      <td>76.4%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">80</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs5</strong>
+                      </td>
+                      <td>76.1%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">81</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Colin</strong>
+                      </td>
+                      <td>75.8%</td>
+                      <td>Oct 20</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">82</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Johan vE</strong>
+                      </td>
+                      <td>75.7%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">83</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Alpha</strong>
+                      </td>
+                      <td>75.6%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">84</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Weepinbell</strong>
+                      </td>
+                      <td>75.6%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">85</span>
+                        
+                      </td>
+                      <td>
+                        <strong>nohehf</strong>
+                      </td>
+                      <td>75.4%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">86</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ErikCapkovic</strong>
+                      </td>
+                      <td>75.4%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">87</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Zain</strong>
+                      </td>
+                      <td>75.4%</td>
+                      <td>Oct 21</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">88</span>
+                        
+                      </td>
+                      <td>
+                        <strong>...</strong>
+                      </td>
+                      <td>75.3%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">89</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Halalay</strong>
+                      </td>
+                      <td>75.3%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">90</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ErikForSharing</strong>
+                      </td>
+                      <td>75.1%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">91</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Sam</strong>
+                      </td>
+                      <td>75.1%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">92</span>
+                        
+                      </td>
+                      <td>
+                        <strong>alex3242</strong>
+                      </td>
+                      <td>75.1%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">93</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Roger</strong>
+                      </td>
+                      <td>75.1%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">94</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Andy</strong>
+                      </td>
+                      <td>75.0%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">95</span>
+                        
+                      </td>
+                      <td>
+                        <strong>FitHub</strong>
+                      </td>
+                      <td>74.9%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">96</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Frajer</strong>
+                      </td>
+                      <td>74.9%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">97</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Zav</strong>
+                      </td>
+                      <td>74.8%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">98</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nicolas FB</strong>
+                      </td>
+                      <td>74.8%</td>
+                      <td>Oct 26</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">99</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Hp01052001</strong>
+                      </td>
+                      <td>74.7%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">100</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Evil Morty</strong>
+                      </td>
+                      <td>74.7%</td>
+                      <td>Oct 26</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">101</span>
+                        
+                      </td>
+                      <td>
+                        <strong>GNBC</strong>
+                      </td>
+                      <td>74.3%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">102</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Priyanka</strong>
+                      </td>
+                      <td>74.2%</td>
+                      <td>Oct 28</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">103</span>
+                        
+                      </td>
+                      <td>
+                        <strong>rainsville</strong>
+                      </td>
+                      <td>74.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">104</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Paige R</strong>
+                      </td>
+                      <td>74.0%</td>
+                      <td>Oct 27</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">105</span>
+                        
+                      </td>
+                      <td>
+                        <strong>TG</strong>
+                      </td>
+                      <td>73.9%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">106</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Erobrine</strong>
+                      </td>
+                      <td>73.9%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">107</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Saumya Borwankar</strong>
+                      </td>
+                      <td>73.9%</td>
+                      <td>Oct 24</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">108</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kiff</strong>
+                      </td>
+                      <td>73.9%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">109</span>
+                        
+                      </td>
+                      <td>
+                        <strong>lium20</strong>
+                      </td>
+                      <td>73.8%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">110</span>
+                        
+                      </td>
+                      <td>
+                        <strong>GOKULKRISHNA A</strong>
+                      </td>
+                      <td>73.7%</td>
+                      <td>Oct 28</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">111</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Yaye Shans</strong>
+                      </td>
+                      <td>73.4%</td>
+                      <td>Oct 27</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">112</span>
+                        
+                      </td>
+                      <td>
+                        <strong>BP</strong>
+                      </td>
+                      <td>73.3%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">113</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Najvacsi frajer</strong>
+                      </td>
+                      <td>73.2%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">114</span>
+                        
+                      </td>
+                      <td>
+                        <strong>jaebrownn</strong>
+                      </td>
+                      <td>73.0%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">115</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs9</strong>
+                      </td>
+                      <td>72.9%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">116</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Claude  Code</strong>
+                      </td>
+                      <td>72.9%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">117</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Daxiw</strong>
+                      </td>
+                      <td>72.6%</td>
+                      <td>Oct 27</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">118</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Train Your Morty</strong>
+                      </td>
+                      <td>72.6%</td>
+                      <td>Oct 26</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">119</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Chest</strong>
+                      </td>
+                      <td>72.6%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">120</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 6</strong>
+                      </td>
+                      <td>72.5%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">121</span>
+                        
+                      </td>
+                      <td>
+                        <strong>CMerrick</strong>
+                      </td>
+                      <td>72.4%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">122</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Ajorn</strong>
+                      </td>
+                      <td>72.2%</td>
+                      <td>Oct 27</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">123</span>
+                        
+                      </td>
+                      <td>
+                        <strong>H4TT1_</strong>
+                      </td>
+                      <td>72.2%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">124</span>
+                        
+                      </td>
+                      <td>
+                        <strong>LG</strong>
+                      </td>
+                      <td>72.1%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">125</span>
+                        
+                      </td>
+                      <td>
+                        <strong>HXAMINE</strong>
+                      </td>
+                      <td>72.1%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">126</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Omar Sheszt</strong>
+                      </td>
+                      <td>72.0%</td>
+                      <td>Oct 26</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">127</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Rohit Mishra</strong>
+                      </td>
+                      <td>72.0%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">128</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kushagra Agarwal</strong>
+                      </td>
+                      <td>71.8%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">129</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jatidude</strong>
+                      </td>
+                      <td>71.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">130</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 3</strong>
+                      </td>
+                      <td>71.8%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">131</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Geodude</strong>
+                      </td>
+                      <td>71.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">132</span>
+                        
+                      </td>
+                      <td>
+                        <strong>sialaoui</strong>
+                      </td>
+                      <td>71.6%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">133</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Sableur</strong>
+                      </td>
+                      <td>71.4%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">134</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 8</strong>
+                      </td>
+                      <td>71.4%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">135</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nishalan</strong>
+                      </td>
+                      <td>71.4%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">136</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gizmo</strong>
+                      </td>
+                      <td>71.2%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">137</span>
+                        
+                      </td>
+                      <td>
+                        <strong>john Doe</strong>
+                      </td>
+                      <td>71.1%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">138</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Dodrio</strong>
+                      </td>
+                      <td>71.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">139</span>
+                        
+                      </td>
+                      <td>
+                        <strong>David Vanderburgh</strong>
+                      </td>
+                      <td>70.9%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">140</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Krithik Sai Sreenish</strong>
+                      </td>
+                      <td>70.9%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">141</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 7</strong>
+                      </td>
+                      <td>70.9%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">142</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nath</strong>
+                      </td>
+                      <td>70.8%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">143</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Golduck</strong>
+                      </td>
+                      <td>70.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">144</span>
+                        
+                      </td>
+                      <td>
+                        <strong>COMEX </strong>
+                      </td>
+                      <td>70.8%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">145</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 2</strong>
+                      </td>
+                      <td>70.7%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">146</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Tanuj Kannan</strong>
+                      </td>
+                      <td>70.7%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">147</span>
+                        
+                      </td>
+                      <td>
+                        <strong>MayaMahouachi</strong>
+                      </td>
+                      <td>70.6%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">148</span>
+                        
+                      </td>
+                      <td>
+                        <strong>AB</strong>
+                      </td>
+                      <td>70.5%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">149</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Boris</strong>
+                      </td>
+                      <td>70.2%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">150</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Lumine</strong>
+                      </td>
+                      <td>70.1%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">151</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Poliwrath</strong>
+                      </td>
+                      <td>70.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">152</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Parasect</strong>
+                      </td>
+                      <td>70.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">153</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 5</strong>
+                      </td>
+                      <td>69.9%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">154</span>
+                        
+                      </td>
+                      <td>
+                        <strong>spanky</strong>
+                      </td>
+                      <td>69.9%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">155</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jaden Fix</strong>
+                      </td>
+                      <td>69.8%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">156</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Slowbro</strong>
+                      </td>
+                      <td>69.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">157</span>
+                        
+                      </td>
+                      <td>
+                        <strong>mal0101</strong>
+                      </td>
+                      <td>69.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">158</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Addhyan Popli</strong>
+                      </td>
+                      <td>69.7%</td>
+                      <td>Nov 01</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">159</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 4</strong>
+                      </td>
+                      <td>69.7%</td>
+                      <td>Oct 31</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">160</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Muk</strong>
+                      </td>
+                      <td>69.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">161</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jabey Babey Taboada&#x27;s Dad</strong>
+                      </td>
+                      <td>69.5%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">162</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Paul</strong>
+                      </td>
+                      <td>69.5%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">163</span>
+                        
+                      </td>
+                      <td>
+                        <strong>waffle</strong>
+                      </td>
+                      <td>69.4%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">164</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Doduo</strong>
+                      </td>
+                      <td>69.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">165</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Slowpoke</strong>
+                      </td>
+                      <td>69.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">166</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kadabra</strong>
+                      </td>
+                      <td>69.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">167</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Growlithe</strong>
+                      </td>
+                      <td>69.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">168</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Training 1</strong>
+                      </td>
+                      <td>69.2%</td>
+                      <td>Oct 30</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">169</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Ranky_000</strong>
+                      </td>
+                      <td>69.2%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">170</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Tentacool</strong>
+                      </td>
+                      <td>69.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">171</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Skibidi Toilet</strong>
+                      </td>
+                      <td>69.1%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">172</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Fares T</strong>
+                      </td>
+                      <td>69.0%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">173</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Onix</strong>
+                      </td>
+                      <td>68.9%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">174</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pidgey</strong>
+                      </td>
+                      <td>68.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">175</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gio</strong>
+                      </td>
+                      <td>68.7%</td>
+                      <td>Oct 29</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">176</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Wigglytuff</strong>
+                      </td>
+                      <td>68.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">177</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Paras</strong>
+                      </td>
+                      <td>68.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">178</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Magneton</strong>
+                      </td>
+                      <td>68.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">179</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Rapidash</strong>
+                      </td>
+                      <td>68.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">180</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Snel23</strong>
+                      </td>
+                      <td>68.4%</td>
+                      <td>Oct 27</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">181</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Chayan</strong>
+                      </td>
+                      <td>68.4%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">182</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Machop</strong>
+                      </td>
+                      <td>68.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">183</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Fearow</strong>
+                      </td>
+                      <td>68.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">184</span>
+                        
+                      </td>
+                      <td>
+                        <strong>camilleR</strong>
+                      </td>
+                      <td>68.3%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">185</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Cloyster</strong>
+                      </td>
+                      <td>68.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">186</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Abhi</strong>
+                      </td>
+                      <td>68.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">187</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Butterfree</strong>
+                      </td>
+                      <td>68.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">188</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gee</strong>
+                      </td>
+                      <td>68.2%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">189</span>
+                        
+                      </td>
+                      <td>
+                        <strong>de_koding</strong>
+                      </td>
+                      <td>68.0%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">190</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Dugtrio</strong>
+                      </td>
+                      <td>67.9%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">191</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Francesca Penaranda</strong>
+                      </td>
+                      <td>67.9%</td>
+                      <td>Oct 28</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">192</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Clefable</strong>
+                      </td>
+                      <td>67.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">193</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kingler</strong>
+                      </td>
+                      <td>67.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">194</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Raticate</strong>
+                      </td>
+                      <td>67.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">195</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Dewgong</strong>
+                      </td>
+                      <td>67.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">196</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nidoking</strong>
+                      </td>
+                      <td>67.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">197</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Voltorb</strong>
+                      </td>
+                      <td>67.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">198</span>
+                        
+                      </td>
+                      <td>
+                        <strong>space beth</strong>
+                      </td>
+                      <td>67.6%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">199</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pidgeot</strong>
+                      </td>
+                      <td>67.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">200</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nexus</strong>
+                      </td>
+                      <td>67.5%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">201</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gloom</strong>
+                      </td>
+                      <td>67.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">202</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Kakuna</strong>
+                      </td>
+                      <td>67.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">203</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Arcanine</strong>
+                      </td>
+                      <td>67.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">204</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jigglypuff</strong>
+                      </td>
+                      <td>67.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">205</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Quinn Campfield</strong>
+                      </td>
+                      <td>67.2%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">206</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Haunter</strong>
+                      </td>
+                      <td>67.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">207</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Krabby</strong>
+                      </td>
+                      <td>67.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">208</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Golbat</strong>
+                      </td>
+                      <td>67.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">209</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Mankey</strong>
+                      </td>
+                      <td>67.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">210</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Meowth</strong>
+                      </td>
+                      <td>67.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">211</span>
+                        
+                      </td>
+                      <td>
+                        <strong>wassim</strong>
+                      </td>
+                      <td>67.0%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">212</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gastly</strong>
+                      </td>
+                      <td>67.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">213</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Bellsprout</strong>
+                      </td>
+                      <td>67.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">214</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Abra</strong>
+                      </td>
+                      <td>67.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">215</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Psyduck</strong>
+                      </td>
+                      <td>67.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">216</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Metapod</strong>
+                      </td>
+                      <td>66.9%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">217</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Weedle</strong>
+                      </td>
+                      <td>66.9%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">218</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Clefairy</strong>
+                      </td>
+                      <td>66.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">219</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Tentacruel</strong>
+                      </td>
+                      <td>66.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">220</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Zubat</strong>
+                      </td>
+                      <td>66.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">221</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Zhaniya</strong>
+                      </td>
+                      <td>66.8%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">222</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nidorino</strong>
+                      </td>
+                      <td>66.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">223</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Ashton Honnecke</strong>
+                      </td>
+                      <td>66.7%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">224</span>
+                        
+                      </td>
+                      <td>
+                        <strong>The404Dude</strong>
+                      </td>
+                      <td>66.7%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">225</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Ponyta</strong>
+                      </td>
+                      <td>66.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">226</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Poliwhirl</strong>
+                      </td>
+                      <td>66.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">227</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Golem</strong>
+                      </td>
+                      <td>66.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">228</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Ninetales</strong>
+                      </td>
+                      <td>66.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">229</span>
+                        
+                      </td>
+                      <td>
+                        <strong>mjobard</strong>
+                      </td>
+                      <td>66.4%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">230</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Arbok</strong>
+                      </td>
+                      <td>66.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">231</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nidorina</strong>
+                      </td>
+                      <td>66.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">232</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Machamp</strong>
+                      </td>
+                      <td>66.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">233</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pidgeotto</strong>
+                      </td>
+                      <td>66.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">234</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Sarah Dribi_Alaoui</strong>
+                      </td>
+                      <td>66.0%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">235</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Shellder</strong>
+                      </td>
+                      <td>66.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">236</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Victreebel</strong>
+                      </td>
+                      <td>66.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">237</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ilias</strong>
+                      </td>
+                      <td>65.9%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">238</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Beedrill</strong>
+                      </td>
+                      <td>65.9%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">239</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Alakazam</strong>
+                      </td>
+                      <td>65.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">240</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pragalvha Sharma</strong>
+                      </td>
+                      <td>65.8%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">241</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Venonat</strong>
+                      </td>
+                      <td>65.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">242</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Magnemite</strong>
+                      </td>
+                      <td>65.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">243</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Persian</strong>
+                      </td>
+                      <td>65.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">244</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Seel</strong>
+                      </td>
+                      <td>65.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">245</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Hypno</strong>
+                      </td>
+                      <td>65.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">246</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Tyberius </strong>
+                      </td>
+                      <td>65.5%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">247</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Vulpix</strong>
+                      </td>
+                      <td>65.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">248</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Primeape</strong>
+                      </td>
+                      <td>65.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">249</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Diglett</strong>
+                      </td>
+                      <td>65.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">250</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Yuval Schneid</strong>
+                      </td>
+                      <td>65.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">251</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Machoke</strong>
+                      </td>
+                      <td>65.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">252</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Graveler</strong>
+                      </td>
+                      <td>65.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">253</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gengar</strong>
+                      </td>
+                      <td>65.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">254</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Ekans</strong>
+                      </td>
+                      <td>65.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">255</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pikachu</strong>
+                      </td>
+                      <td>65.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">256</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nidoqueen</strong>
+                      </td>
+                      <td>65.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">257</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Oddish</strong>
+                      </td>
+                      <td>65.1%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">258</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Drowzee</strong>
+                      </td>
+                      <td>65.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">259</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pujia</strong>
+                      </td>
+                      <td>65.0%</td>
+                      <td>Oct 25</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">260</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Vileplume</strong>
+                      </td>
+                      <td>65.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">261</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Venomoth</strong>
+                      </td>
+                      <td>64.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">262</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Raichu</strong>
+                      </td>
+                      <td>64.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">263</span>
+                        
+                      </td>
+                      <td>
+                        <strong>just4fun</strong>
+                      </td>
+                      <td>64.8%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">264</span>
+                        
+                      </td>
+                      <td>
+                        <strong>tum</strong>
+                      </td>
+                      <td>64.8%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">265</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Rattata</strong>
+                      </td>
+                      <td>64.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">266</span>
+                        
+                      </td>
+                      <td>
+                        <strong>PepeSilvia</strong>
+                      </td>
+                      <td>64.6%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">267</span>
+                        
+                      </td>
+                      <td>
+                        <strong>King of Pines</strong>
+                      </td>
+                      <td>64.5%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">268</span>
+                        
+                      </td>
+                      <td>
+                        <strong>maximegajic</strong>
+                      </td>
+                      <td>64.4%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">269</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Grimer</strong>
+                      </td>
+                      <td>64.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">270</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Moriyan</strong>
+                      </td>
+                      <td>64.2%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">271</span>
+                        
+                      </td>
+                      <td>
+                        <strong>tanmayep</strong>
+                      </td>
+                      <td>64.2%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">272</span>
+                        
+                      </td>
+                      <td>
+                        <strong>mbs</strong>
+                      </td>
+                      <td>64.1%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">273</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Caterpie</strong>
+                      </td>
+                      <td>64.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">274</span>
+                        
+                      </td>
+                      <td>
+                        <strong>LST</strong>
+                      </td>
+                      <td>64.0%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">275</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Sandshrew</strong>
+                      </td>
+                      <td>64.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">276</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Sandslash</strong>
+                      </td>
+                      <td>64.0%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">277</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs6</strong>
+                      </td>
+                      <td>63.7%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">278</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Poliwag</strong>
+                      </td>
+                      <td>63.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">279</span>
+                        
+                      </td>
+                      <td>
+                        <strong>AK169</strong>
+                      </td>
+                      <td>63.6%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">280</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Amoon</strong>
+                      </td>
+                      <td>63.3%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">281</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Younesbs2</strong>
+                      </td>
+                      <td>63.1%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">282</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Pakesy</strong>
+                      </td>
+                      <td>63.0%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">283</span>
+                        
+                      </td>
+                      <td>
+                        <strong>katia</strong>
+                      </td>
+                      <td>62.5%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">284</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Spearow</strong>
+                      </td>
+                      <td>62.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">285</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nick9000</strong>
+                      </td>
+                      <td>62.3%</td>
+                      <td>Oct 19</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">286</span>
+                        
+                      </td>
+                      <td>
+                        <strong>imsekkat</strong>
+                      </td>
+                      <td>62.1%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">287</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Shiv</strong>
+                      </td>
+                      <td>61.9%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">288</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Othmane Hamzaoui</strong>
+                      </td>
+                      <td>61.5%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">289</span>
+                        
+                      </td>
+                      <td>
+                        <strong>crab nebula&#x27;s dad</strong>
+                      </td>
+                      <td>61.4%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">290</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Yacine</strong>
+                      </td>
+                      <td>61.3%</td>
+                      <td>Oct 29</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">291</span>
+                        
+                      </td>
+                      <td>
+                        <strong>RC_Morty</strong>
+                      </td>
+                      <td>61.2%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">292</span>
+                        
+                      </td>
+                      <td>
+                        <strong>jonathandk</strong>
+                      </td>
+                      <td>61.2%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">293</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Victor</strong>
+                      </td>
+                      <td>61.1%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">294</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Skyzlim</strong>
+                      </td>
+                      <td>61.0%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">295</span>
+                        
+                      </td>
+                      <td>
+                        <strong>MINTA</strong>
+                      </td>
+                      <td>60.8%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">296</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Claude Code</strong>
+                      </td>
+                      <td>60.2%</td>
+                      <td>Oct 19</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">297</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Homeless</strong>
+                      </td>
+                      <td>60.0%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">298</span>
+                        
+                      </td>
+                      <td>
+                        <strong>AliM</strong>
+                      </td>
+                      <td>59.8%</td>
+                      <td>Oct 19</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">299</span>
+                        
+                      </td>
+                      <td>
+                        <strong>rjx</strong>
+                      </td>
+                      <td>59.7%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">300</span>
+                        
+                      </td>
+                      <td>
+                        <strong>GPT-5 Pro</strong>
+                      </td>
+                      <td>59.5%</td>
+                      <td>Oct 19</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">301</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Lawson470189</strong>
+                      </td>
+                      <td>59.4%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">302</span>
+                        
+                      </td>
+                      <td>
+                        <strong>MaximoLR</strong>
+                      </td>
+                      <td>59.0%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">303</span>
+                        
+                      </td>
+                      <td>
+                        <strong>NameUr</strong>
+                      </td>
+                      <td>58.5%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">304</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Bruno Leech</strong>
+                      </td>
+                      <td>58.5%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">305</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r4</strong>
+                      </td>
+                      <td>58.2%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">306</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Carson Maestas</strong>
+                      </td>
+                      <td>58.0%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">307</span>
+                        
+                      </td>
+                      <td>
+                        <strong>PRFD</strong>
+                      </td>
+                      <td>57.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">308</span>
+                        
+                      </td>
+                      <td>
+                        <strong>JLMSC</strong>
+                      </td>
+                      <td>57.3%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">309</span>
+                        
+                      </td>
+                      <td>
+                        <strong>aguerouani</strong>
+                      </td>
+                      <td>57.0%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">310</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r9</strong>
+                      </td>
+                      <td>56.8%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">311</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r12</strong>
+                      </td>
+                      <td>56.7%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">312</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r5</strong>
+                      </td>
+                      <td>56.5%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">313</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r6</strong>
+                      </td>
+                      <td>56.4%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">314</span>
+                        
+                      </td>
+                      <td>
+                        <strong>GPT-5 High</strong>
+                      </td>
+                      <td>56.4%</td>
+                      <td>Oct 19</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">315</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r7</strong>
+                      </td>
+                      <td>56.3%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">316</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Schlaep</strong>
+                      </td>
+                      <td>56.1%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">317</span>
+                        
+                      </td>
+                      <td>
+                        <strong>jerry</strong>
+                      </td>
+                      <td>56.0%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">318</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r2</strong>
+                      </td>
+                      <td>55.9%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">319</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Giorgio</strong>
+                      </td>
+                      <td>55.8%</td>
+                      <td>Oct 21</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">320</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Nicolas</strong>
+                      </td>
+                      <td>55.5%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">321</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r11</strong>
+                      </td>
+                      <td>55.4%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">322</span>
+                        
+                      </td>
+                      <td>
+                        <strong>ajgadekin</strong>
+                      </td>
+                      <td>55.3%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">323</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r10</strong>
+                      </td>
+                      <td>55.2%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">324</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r1</strong>
+                      </td>
+                      <td>55.1%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">325</span>
+                        
+                      </td>
+                      <td>
+                        <strong>r3</strong>
+                      </td>
+                      <td>54.6%</td>
+                      <td>Nov 10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">326</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jason B</strong>
+                      </td>
+                      <td>54.4%</td>
+                      <td>Oct 19</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">327</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Rachid BENHSINA</strong>
+                      </td>
+                      <td>54.3%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">328</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Palashtic</strong>
+                      </td>
+                      <td>54.2%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">329</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jordan C</strong>
+                      </td>
+                      <td>53.5%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">330</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Autobot1</strong>
+                      </td>
+                      <td>53.3%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">331</span>
+                        
+                      </td>
+                      <td>
+                        <strong>collector</strong>
+                      </td>
+                      <td>53.0%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">332</span>
+                        
+                      </td>
+                      <td>
+                        <strong>alexmojaki</strong>
+                      </td>
+                      <td>53.0%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">333</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Buster</strong>
+                      </td>
+                      <td>52.9%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">334</span>
+                        
+                      </td>
+                      <td>
+                        <strong>merliam</strong>
+                      </td>
+                      <td>52.9%</td>
+                      <td>Nov 13</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">335</span>
+                        
+                      </td>
+                      <td>
+                        <strong>clempec</strong>
+                      </td>
+                      <td>52.8%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">336</span>
+                        
+                      </td>
+                      <td>
+                        <strong>sanjan</strong>
+                      </td>
+                      <td>52.8%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">337</span>
+                        
+                      </td>
+                      <td>
+                        <strong>MoaadBernheim</strong>
+                      </td>
+                      <td>52.7%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">338</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Antoine55</strong>
+                      </td>
+                      <td>52.7%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">339</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Jack</strong>
+                      </td>
+                      <td>52.6%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">340</span>
+                        
+                      </td>
+                      <td>
+                        <strong>mehddii</strong>
+                      </td>
+                      <td>52.5%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">341</span>
+                        
+                      </td>
+                      <td>
+                        <strong>crabnebulafun</strong>
+                      </td>
+                      <td>52.3%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">342</span>
+                        
+                      </td>
+                      <td>
+                        <strong>AntoineBernheim</strong>
+                      </td>
+                      <td>52.1%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">343</span>
+                        
+                      </td>
+                      <td>
+                        <strong>pvsefhiawbwa</strong>
+                      </td>
+                      <td>52.1%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">344</span>
+                        
+                      </td>
+                      <td>
+                        <strong>mhbqaiwqsbwu555555</strong>
+                      </td>
+                      <td>52.0%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">345</span>
+                        
+                      </td>
+                      <td>
+                        <strong>JazzyMaxine</strong>
+                      </td>
+                      <td>51.9%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">346</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Akwari</strong>
+                      </td>
+                      <td>51.9%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">347</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Toufou</strong>
+                      </td>
+                      <td>51.6%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">348</span>
+                        
+                      </td>
+                      <td>
+                        <strong>SachaFali</strong>
+                      </td>
+                      <td>51.6%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">349</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Vanadium</strong>
+                      </td>
+                      <td>51.6%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">350</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Tetoin5</strong>
+                      </td>
+                      <td>51.6%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">351</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Coolest Guy</strong>
+                      </td>
+                      <td>51.4%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">352</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Tetoin</strong>
+                      </td>
+                      <td>51.3%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">353</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Gabent</strong>
+                      </td>
+                      <td>51.3%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">354</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Neeko</strong>
+                      </td>
+                      <td>51.1%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">355</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Quin H</strong>
+                      </td>
+                      <td>50.9%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">356</span>
+                        
+                      </td>
+                      <td>
+                        <strong>medmdg</strong>
+                      </td>
+                      <td>50.5%</td>
+                      <td>Nov 14</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">357</span>
+                        
+                      </td>
+                      <td>
+                        <strong>institubes</strong>
+                      </td>
+                      <td>49.9%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">358</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Miguel</strong>
+                      </td>
+                      <td>49.6%</td>
+                      <td>Nov 12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">359</span>
+                        
+                      </td>
+                      <td>
+                        <strong>LV</strong>
+                      </td>
+                      <td>49.4%</td>
+                      <td>Nov 03</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">360</span>
+                        
+                      </td>
+                      <td>
+                        <strong>bleh</strong>
+                      </td>
+                      <td>49.0%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">361</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Harsh</strong>
+                      </td>
+                      <td>43.1%</td>
+                      <td>Nov 11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">362</span>
+                        
+                      </td>
+                      <td>
+                        <strong>RphyAntoine</strong>
+                      </td>
+                      <td>39.0%</td>
+                      <td>Nov 15</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">363</span>
+                        
+                      </td>
+                      <td>
+                        <strong>SarahD</strong>
+                      </td>
+                      <td>36.3%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">364</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Hugo1729</strong>
+                      </td>
+                      <td>36.2%</td>
+                      <td>Nov 04</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">365</span>
+                        
+                      </td>
+                      <td>
+                        <strong>NR</strong>
+                      </td>
+                      <td>23.5%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">366</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Breh</strong>
+                      </td>
+                      <td>10.2%</td>
+                      <td>Nov 08</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">367</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Thorrut</strong>
+                      </td>
+                      <td>3.4%</td>
+                      <td>Nov 05</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">368</span>
+                        
+                      </td>
+                      <td>
+                        <strong>YAaz</strong>
+                      </td>
+                      <td>2.2%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">369</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Andrei</strong>
+                      </td>
+                      <td>1.5%</td>
+                      <td>Nov 07</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">370</span>
+                        
+                      </td>
+                      <td>
+                        <strong>Piyush Kulkarni</strong>
+                      </td>
+                      <td>0.9%</td>
+                      <td>Nov 09</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>
+                        
+                          <span class="badge bg-info badge-rank">371</span>
+                        
+                      </td>
+                      <td>
+                        <strong>dvidbruhm</strong>
+                      </td>
+                      <td>0.4%</td>
+                      <td>Nov 06</td>
+                    </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          
+        </div>
+      </div>
+      <!-- RIGHT COLUMN -->
+      <div class="col-lg-8 right-column">
+        <!-- Image -->
+        <br />
+        <br />
+        <br />
+        
+        <!-- Challenge Closing Notice -->
+        <div class="challenge-notice"
+             style="max-width: 940px;
+                    margin: 0 auto 30px auto;
+                    background: #1c2128;
+                    border: 2px solid #8a9db5;
+                    border-radius: 8px;
+                    padding: 20px;
+                    box-shadow: 0 0 20px rgba(138, 157, 181, 0.2)">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="font-size: 2rem;">⏰</div>
+            <div style="flex: 1;">
+              <h4 style="color: #8a9db5;
+                         margin: 0 0 8px 0;
+                         font-family: 'JetBrains Mono', monospace;
+                         font-size: 1.1rem;
+                         font-weight: 600">
+                <span id="countdown">Closes in ...</span>
+              </h4>
+              <p style="color: #9ca3af;
+                        margin: 0;
+                        font-family: 'JetBrains Mono', monospace;
+                        font-size: 0.9rem">November 20, 11:59:59 PM PST - Time is ticking, Morty!</p>
+            </div>
+          </div>
+        </div>
+        <!-- Challenge Description -->
+        <div class="challenge-content">
+          <p>
+            Wubba Lubba Dub Dub! Alright, Morty. Listen up. Your grandpa, Rick, did a thing. A real <em>Rick</em> thing. He found a planet. A whole planet populated by a million Jessica's - emotionally stable, well-adjusted Jessica's! Planet Jessica. It's great. It's <em>really</em> great.
+          </p>
+          <div class="text-center mb-4">
+            <img src="/static/img/morty-express-diagram.8a90218ea337.png"
+                 alt="Morty Express Challenge Diagram"
+                 class="img-fluid diagram-img" />
+          </div>
+          <p>
+            But guess what? The Council of Ricks found out. Those bureaucratic blowhards in the Citadel decided that Morties having access to a source of genuine happiness would make them "less pliable." So, their grand plan is to hook every Morty up to a "Memory-B-Gone 5000" and wipe Planet Jessica from our collective, anxious consciousness.
+          </p>
+          <p>Aw, geez, I know.</p>
+          <p>
+            But you, you magnificent little Morty, overheard everything. You've barricaded yourself in an underground Citadel sub-level with 999 other Morties. You've got portal guns, but those are cheap knock-offs your Rick built in a drunken stupor. It can't make the jump directly to Planet Jessica - it's too far. So you have to travel through one of three <em>highly questionable</em> planets.
+          </p>
+          <h3>Your Objective</h3>
+          <p>
+            Write a script that interacts with an API to send 1000 Morties, in groups of up to 3, from the Citadel to Planet Jessica. You must travel through one of three intermediate planets. Your goal is to <strong>maximize the number of Morties who arrive safely</strong>.
+          </p>
+          <h3>The Paths (Choose Wisely, or Don't, Whatever)</h3>
+          <p>You have three choices for your intermediate stop:</p>
+          <ul>
+            <li>
+              <strong>Planet A, index=0: "On a Cob" Planet</strong>
+            </li>
+            <li>
+              <strong>Planet B, index=1: Cronenberg World</strong>
+            </li>
+            <li>
+              <strong>Planet C, index=2: The Purge Planet</strong>
+            </li>
+          </ul>
+          <p>
+            <strong>Risk Profile:</strong> The risk for each planet changes dynamically over time based on the number of trips taken.
+          </p>
+          <h3>How to Win</h3>
+          <p>
+            The challenge ends when <code>morties_in_citadel</code> is 0. Your final score is the value of <code>morties_on_planet_jessica</code>. Develop an algorithm that probes the different routes, analyzes the results, and adapts its strategy to the changing odds to save as many Morties as possible.
+          </p>
+        </div>
+        <!-- API Specification -->
+        <div class="challenge-content">
+          <h3>API Specification</h3>
+          <p>You'll be interacting with a simple REST API.</p>
+          <p>
+            <strong>Base URL:</strong> <code>https://challenge.sphinxhq.com</code>
+          </p>
+          <h4>1. Request API Token</h4>
+          <p>Get an API token to authenticate your requests.</p>
+          <ul>
+            <li>
+              <strong>Endpoint:</strong> <code>POST /api/auth/request-token/</code>
+            </li>
+            <li>
+              <strong>Request Body:</strong>
+              <pre><code>{
+  "name": "Your Name",
+  "email": "your.email@example.com"
+}</code></pre>
+            </li>
+            <li>
+              <strong>Response (200 OK):</strong> Token will be sent to your email
+            </li>
+          </ul>
+          <h4>2. Start a New Episode</h4>
+          <p>This endpoint initializes your escape attempt.</p>
+          <ul>
+            <li>
+              <strong>Endpoint:</strong> <code>POST /api/mortys/start/</code>
+            </li>
+            <li>
+              <strong>Headers:</strong> <code>Authorization: Bearer YOUR_TOKEN</code>
+            </li>
+            <li>
+              <strong>Request Body:</strong> None
+            </li>
+            <li>
+              <strong>Response (200 OK):</strong>
+              <pre><code>{
+  "morties_in_citadel": 1000,
+  "morties_on_planet_jessica": 0,
+  "morties_lost": 0,
+  "steps_taken": 0,
+  "status_message": "Keep going! Or don't. I'm not your dad."
+}</code></pre>
+            </li>
+          </ul>
+          <h4>3. Send Morties Through a Portal</h4>
+          <p>This is your main action. Send a group of Morties on their perilous journey.</p>
+          <ul>
+            <li>
+              <strong>Endpoint:</strong> <code>POST /api/mortys/portal/</code>
+            </li>
+            <li>
+              <strong>Headers:</strong> <code>Authorization: Bearer YOUR_TOKEN</code>
+            </li>
+            <li>
+              <strong>Request Body:</strong>
+              <pre><code>{
+  "planet": 0 | 1 | 2,
+  "morty_count": 1 | 2 | 3
+}</code></pre>
+              <p>
+                <strong>Planet indices:</strong> 0 = "On a Cob" Planet, 1 = Cronenberg World, 2 = The Purge Planet
+              </p>
+            </li>
+            <li>
+              <strong>Response (200 OK):</strong>
+              <pre><code>{
+  "morties_sent": 3,
+  "survived": true,
+  "morties_in_citadel": 747,
+  "morties_on_planet_jessica": 203,
+  "morties_lost": 50,
+  "steps_taken": 84
+}</code></pre>
+            </li>
+          </ul>
+          <h4>4. Get Episode Status</h4>
+          <p>Check your current progress.</p>
+          <ul>
+            <li>
+              <strong>Endpoint:</strong> <code>GET /api/mortys/status/</code>
+            </li>
+            <li>
+              <strong>Headers:</strong> <code>Authorization: Bearer YOUR_TOKEN</code>
+            </li>
+            <li>
+              <strong>Response (200 OK):</strong>
+              <pre><code>{
+  "morties_in_citadel": 750,
+  "morties_on_planet_jessica": 150,
+  "morties_lost": 100,
+  "steps_taken": 83,
+  "status_message": "Keep going! Or don't. I'm not your dad."
+}</code></pre>
+            </li>
+          </ul>
+        </div>
+        <!-- Prize Section -->
+        <div class="challenge-content">
+          <h2>💰 The Loot</h2>
+          <p>
+            Now Morty, you do this right, and there's actual real-world money in it for you. I know, I know, capitalism is a construct, the value of currency is arbitrary, blah blah blah. But you can't buy portal fluid with good intentions.
+          </p>
+          <h3>The Prizes:</h3>
+          <ul>
+            <li>
+              <strong>🥇 First Place: $10,000 + Flight to San Francisco</strong>
+              <br />
+              <em>That's right, Morty. Ten thousand Earth dollars. And get this - you'll fly out to SF to interview with the Sphinx team. Real tech company, Morty. Not like those fake ones that turned out to be fronts for interdimensional weapons dealers.</em>
+            </li>
+            <li>
+              <strong>🥈 Second Place: $4,000 + Remote Interview</strong>
+              <br />
+              <em>Four thousand dollars, Morty! Plus you get a remote interview with Sphinx. That's like... *burp*... I don't know, a lot of Szechuan sauce and a chance at a real job.</em>
+            </li>
+            <li>
+              <strong>🥉 Third Place: $2,000 + Remote Interview</strong>
+              <br />
+              <em>Price of a entry-level portal gun battery. Or therapy. You're gonna need one of those after this, Morty. Plus, hey, you get to interview remotely with Sphinx too.</em>
+            </li>
+          </ul>
+        </div>
+        <!-- Hint Section -->
+        <div class="challenge-content">
+          <h2>💡 Hint from Rick</h2>
+          <p>
+            <em>*burp*</em> Alright, listen up Morty. Here's a tip from your genius grandpa: although the average survival rate is the same, the probabilities of the 3 planets are changing with time. Time being the number of trips. Some change faster than others.
+            First, try to just observe each planet's frequency. Send all your Mortys to one planet and see what happens. Data is your friend. Gotta visualize it, Morty.
+          </p>
+          <p>
+            <em>Good luck, Morty. Don't... y'know... don't screw this up. For Jessica.</em>
+          </p>
+        </div>
+      </div>
+      <!-- End RIGHT COLUMN -->
+    </div>
+    <!-- End row -->
+  </div>
+  <!-- End container -->
+  <script nonce="t+RreVQqisWoPf6FxlGTQg==">
+    function updateCountdown() {
+      const deadline = new Date('2025-11-20T23:59:59-08:00');
+      const now = new Date();
+      const diff = deadline - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').textContent = 'Challenge Closed';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const pad = (num, size) => String(num).padStart(size, '0');
+
+      document.getElementById('countdown').textContent =
+        `Closes in ${days} days, ${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+
+      setTimeout(updateCountdown, 100);
+    }
+
+    updateCountdown();
+
+    document.getElementById('tokenForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const resultDiv = document.getElementById('tokenResult');
+      const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+      try {
+        const response = await fetch('/api/auth/request-token/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          resultDiv.innerHTML = `
+        <div class="alert alert-success mt-3">
+          <i class="bi bi-check-circle"></i> ${data.message}. Check your email!
+        </div>
+      `;
+        } else {
+          resultDiv.innerHTML = `
+        <div class="alert alert-danger mt-3">
+          <i class="bi bi-exclamation-triangle"></i> Error: ${data.error || 'Failed to request token'}
+        </div>
+      `;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `
+      <div class="alert alert-danger mt-3">
+        <i class="bi bi-exclamation-triangle"></i> Network error: ${error.message}
+      </div>
+    `;
+      }
+    });
+
+    const asciiArt = document.getElementById('asciiArt');
+    const originalArt = asciiArt.textContent;
+    const hoverArt = originalArt.replace(/:/g, '*');
+
+    asciiArt.addEventListener('mouseenter', function() {
+      asciiArt.textContent = hoverArt;
+    });
+
+    asciiArt.addEventListener('mouseleave', function() {
+      asciiArt.textContent = originalArt;
+    });
+  </script>
+
+      </main>
+    
+  </body>
+</html>
