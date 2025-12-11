@@ -83,7 +83,3 @@ After running analysis, you can customize the solution in `solve.py`:
 - Modify `adaptive_get_best_planet()` based on discovered patterns
 - Use `run_time_based_strategy()` with custom switch points from analysis
 
-## Goal
-
-Maximize survival rate (aim for 93%+ to compete with top leaderboard scores).
-
